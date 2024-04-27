@@ -1,6 +1,5 @@
 import React from "react";
 import { MenuItem } from "./menu-item";
-import "./menu-group.scss";
 
 type MenuGroupProps = {
   title: string;

@@ -4,7 +4,6 @@ import { Users } from "./pages/users/users";
 import { Products } from "./pages/products/products";
 import { Layout } from "./layout/Layout";
 import Login from "./pages/login/login";
-import "./styles/global.scss";
 
 function App() {
   const router = createBrowserRouter([

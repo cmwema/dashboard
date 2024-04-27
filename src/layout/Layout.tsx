@@ -1,22 +1,32 @@
 import { Outlet } from "react-router-dom";
-import { Footer } from "../components/footer/footer";
-import { Menu } from "../components/menu/menu";
-import { NavBar } from "../components/navbar/navbar";
-import "./layout.scss";
+import { Footer } from "./footer";
+import { Menu } from "./menu";
+import { NavBar } from "./navbar";
+import styled from "@emotion/styled";
+import { Box } from "@mui/material";
+
+const StyledLayout = styled(Box)({
+  width: "100vw",
+  height: "100vh",
+  display: "grid",
+  gridTemplateColumns: "200px 1fr",
+  gridTemplateRows: "80px 1fr 60px",
+  gridTemplateAreas: `
+  "header header"
+  "sidebar main"
+  "sidebar footer"
+  `,
+});
 
 export const Layout = () => {
   return (
-    <div className="main">
+    <StyledLayout>
       <NavBar />
-      <div className="container">
-        <div className="menuContainer">
-          <Menu />
-        </div>
-        <div className="contentContainer">
-          <Outlet />
-        </div>
+      <Menu />
+      <div className="content">
+        <Outlet />
       </div>
       <Footer />
-    </div>
+    </StyledLayout>
   );
 };
